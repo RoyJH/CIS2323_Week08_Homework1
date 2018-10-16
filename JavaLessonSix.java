@@ -1,39 +1,22 @@
-// java.lang.RunTimeException	Checked by you: Your resonsible for these
-
-// java.lang.Exception		Checked by compliler: Will prevent program from running
-
-// AritmeticException
-// ClassNotFoundException
-// IllegalArgumentException
-// IndexOutOfBounds
-// InputMismatchException
-// IOException
-
-public class JavaLessonSix{
+import java.io.*;
+public class JavaLessonSix {
 	
-	public static void main (String[] args){
-		
-		divideByZero(2);
-		
-	}
 	
-	public static void divideByZero(int a){
-		
-		try
-		{
-			System.out.println(a/0);
+		public static void main (String[] args){
+				try
+				{
+				getAFile(" ./somestuff.txt");
+				}
+			
+				catch(IOException e)
+				{
+					System.out.println("An IO Error Occurred");
+				}
 		}
-		catch (ArithmeticException e)
-		{
-			System.out.println("You can't do that.");
-			
-			System.out.println(e.getMessage());
-			
-			System.out.println(e.toString());
-			
-			e.printStackTrace();
+		public static  void getAFile(String fileName) throws IOException, FileNotFoundException{
+		
+			FileInputStream file = new FileInputStream(fileName);
+
 		}
 		
-	}
-	
 }
